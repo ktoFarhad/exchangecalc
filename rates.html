@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExchangeCalc - Курсы валют</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-exchange-alt"></i>
+                <h1>ExchangeCalc</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="converter.html">Калькулятор</a></li>
+                <li><a href="rates.html" class="active">Курсы валют</a></li>
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="rates-section">
+            <h2>Текущие <span class="highlight">курсы валют</span></h2>
+            <p>Базовая валюта: <span id="base-currency">USD</span></p>
+            
+            <div class="rates-controls">
+                <div class="form-group">
+                    <label for="base-currency-select">Изменить базовую валюту</label>
+                    <select id="base-currency-select"></select>
+                </div>
+                <button id="refresh-rates" class="btn btn-primary">
+                    <i class="fas fa-sync-alt"></i> Обновить курсы
+                </button>
+            </div>
+            
+            <div class="rates-container">
+                <div id="rates-loading" class="loading">
+                    <i class="fas fa-spinner fa-spin"></i> Загрузка курсов валют...
+                </div>
+                <div id="rates-error" class="error hidden">
+                    <i class="fas fa-exclamation-triangle"></i> 
+                    <p>Ошибка загрузки курсов валют. Пожалуйста, попробуйте позже.</p>
+                </div>
+                <table id="rates-table" class="rates-table">
+                    <thead>
+                        <tr>
+                            <th>Валюта</th>
+                            <th>Код</th>
+                            <th>Курс</th>
+                        </tr>
+                    </thead>
+                    <tbody id="rates-body">
+                        <!-- Курсы будут заполнены с помощью JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div id="last-updated-rates" class="last-updated">
+                <small>Последнее обновление: <span id="update-time-rates">--</span></small>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 ExchangeCalc</p>
+            <ul class="footer-links">
+                <li><a href="about.html">О нас</a></li>
+                <li><a href="contact.html">Контакты</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
